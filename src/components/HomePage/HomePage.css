@@ -1,7 +1,16 @@
 .home-page {
  height: 85vh;
+ padding: 20px;
 }
 
 h2 {
   text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  overflow: hidden visible;
 }

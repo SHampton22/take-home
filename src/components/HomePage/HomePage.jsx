@@ -15,18 +15,6 @@ export default function HomePage() {
 
 console.log(topStories)
 
-  // const displayArticles = filteredArticles.map(article => {
-  //   return (
-  //     <Card 
-  //       key={article.uri}
-  //       id={article.uri}
-  //       section={article.section}
-  //       title={article.title}
-  //       image={article.multimedia[2].url}
-  //     />
-  //   )
-  // })
-
   return (
     <section className='home-page'>
       <Filter setCategory={setCategory}/>
@@ -41,6 +29,7 @@ console.log(topStories)
                 section={article.section}
                 title={article.title}
                 image={article.multimedia[2].url}
+                topStories={topStories}
               />
             )
           }
