@@ -1,42 +1,36 @@
+import { getTopStories } from '../../apiCalls'
 import './Filter.css'
 
-export default function Filter() {
+export default function Filter({ setCategory }) {
 
   return (
-    <select>
-      <option value=''>Filter Articles by Category</option>
-      {/* {categories.map((category) => (
-                <option key={} value={}>
-                  {category.name}
-                </option>
-              ))} */}
+    <select className='drop-down-filter' onChange={(e) => setCategory(e.target.value)}>
+      <option value='home'>Top Stories</option>
+      <option value='arts'>Arts</option>
+      <option value='automobiles'>Automobiles</option>
+      <option value='books'>Books</option>
+      <option value='business'>Business</option>
+      <option value='fashion'>Fashion</option>
+      <option value='food'>Food</option>
+      <option value='health'>Health</option>
+      <option value='insider'>Insider</option>
+      <option value='magazine'>Magazine</option>
+      <option value='movies'>Movies</option>
+      <option value='nyregion'>NY Region</option>
+      <option value='obituaries'>Obituaries</option>
+      <option value='opinion'>Opinion</option>
+      <option value='politics'>Politics</option>
+      <option value='realestate'>Real Estate</option>
+      <option value='science'>Science</option>
+      <option value='sports'>Sports</option>
+      <option value='sundayreview'>Sunday Review</option>
+      <option value='technology'>Technology</option>
+      <option value='theater'>Theater</option>
+      <option value='t-magazine'>Time Magazine</option>
+      <option value='travel'>Travel</option>
+      <option value='upshot'>Up Shot</option>
+      <option value='us'>US</option>
+      <option value='world'>World</option>
     </select>
-    // <nav>
-    //   <button>Arts</button>
-    //   <button>Automobiles</button>
-    //   <button>Books</button>
-    //   <button>Business</button>
-    //   <button>Fashion</button>
-    //   <button>Food</button>
-    //   <button>Health</button>
-    //   <button>Insider</button>
-    //   <button>Magazine</button>
-    //   <button>Movies</button>
-    //   <button>NY Region</button>
-    //   <button>Obituaries</button>
-    //   <button>Opinion</button>
-    //   <button>Politics</button>
-    //   <button>Real Estate</button>
-    //   <button>Science</button>
-    //   <button>Sports</button>
-    //   <button>Sunday Review</button>
-    //   <button>Technology</button>
-    //   <button>Theater</button>
-    //   <button>Time Magazine</button>
-    //   <button>Travel</button>
-    //   <button>Up Shot</button>
-    //   <button>US</button>
-    //   <button>World</button>
-    // </nav>
   )
 }
