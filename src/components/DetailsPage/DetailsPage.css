@@ -1,0 +1,42 @@
+.details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.details-image-container,
+.details-title,
+.details-abstract {
+  max-width: 900px;
+  min-width: 200px;
+}
+
+.details-by-line,
+.details-date-published,
+.details-image-copyright {
+  font-size: 12px;
+}
+
+.details-image {
+  width: 100%;
+  height: auto;
+}
+
+.details-image-copyright {
+  margin: 0;
+  text-align: right ;
+}
+
+@media screen and (max-width: 320px) {
+  .details-image-container {
+    max-width: 400px;
+    min-width: 200px;
+  }
+  
+  .details-image {
+    width: 100%;
+    height: auto;
+  }
+  
+}

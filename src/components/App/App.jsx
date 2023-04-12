@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router'
-import CardContainer from '../HomePage/HomePage'
 import Header from '../Header/Header'
-import './App.css'
 import HomePage from '../HomePage/HomePage'
+import DetailsPage from '../DetailsPage/DetailsPage'
+import './App.css'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<HomePage />}></Route>
-        <Route></Route>
+        <Route path='/article-details/:id' element={<DetailsPage />}></Route>
       </Routes>
     </main>
   )
