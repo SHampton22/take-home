@@ -5,14 +5,15 @@ import { getTopStories } from '../../apiCalls'
 import './HomePage.css' 
 
 export default function HomePage() {
-  const[filteredArticles, setFilteredArticles] = useState()
+  const[topStories, setTopStories] = useState()
+  const[category, setCategory] = useState('home')
 
   useEffect(() => {
-    getTopStories('home')
-      .then(data => setFilteredArticles(data.results))
-  }, [])
+    getTopStories(category)
+      .then(data => setTopStories(data.results))
+  }, [category])
 
-console.log(filteredArticles)
+console.log(topStories)
 
   // const displayArticles = filteredArticles.map(article => {
   //   return (
@@ -28,20 +29,22 @@ console.log(filteredArticles)
 
   return (
     <section className='home-page'>
-      <Filter />
+      <Filter setCategory={setCategory}/>
       <h2>Top Stories</h2>
       <div className='cards-container'>
-        {filteredArticles && filteredArticles.map((article, index) => {
-    return (
-      <Card 
-        key={index}
-        id={index}
-        section={article.section}
-        title={article.title}
-        image={article.multimedia[2].url}
-      />
-    )
-  })}
+        {topStories && topStories.map((article, index) => {
+          if (article.multimedia) {
+            return (
+              <Card 
+                key={index}
+                id={index}
+                section={article.section}
+                title={article.title}
+                image={article.multimedia[2].url}
+              />
+            )
+          }
+        })}
       </div>
     </section>
   )
