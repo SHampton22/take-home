@@ -1,19 +1,38 @@
 .card {
-  height: 150px;
+  height: 155px;
   width: 400px;
   margin-bottom: 8%;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 5px;
 }
 
 .card-text {
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-byline {
+  font-size: 12px;
+}
+
+.card-title,
+.card-byline, 
+.card-category {
+  margin: 0;
 }
 
 .card-image {
   height: 150px;
   width: 150px;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 640px) {
@@ -21,6 +40,9 @@
     width: 100%;
   }
 
+  .card-text {
+    overflow: scroll;
+  }
 }
 
 @media screen and (min-width: 641px) {
@@ -28,7 +50,4 @@
     height: 150px;
     width: 600px;
   }
-
-
-
 }

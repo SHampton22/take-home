@@ -1,4 +1,3 @@
-import { getTopStories } from '../../apiCalls'
 import './Filter.css'
 
 export default function Filter({ setCategory }) {
