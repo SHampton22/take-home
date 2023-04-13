@@ -4,7 +4,7 @@ import HomePage from '../HomePage/HomePage'
 import DetailsPage from '../DetailsPage/DetailsPage'
 import './App.css'
 
-function App() {
+export default function App() {
   return (
     <main>
       <Header />
@@ -15,5 +15,3 @@ function App() {
     </main>
   )
 }
-
-export default App

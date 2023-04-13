@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
+import { getTopStories } from '../../apiCalls'
 import Filter from '../Filter/Filter'
 import Card from '../Card/Card'
-import { getTopStories } from '../../apiCalls'
 import './HomePage.css' 
 
 export default function HomePage() {
@@ -13,12 +13,10 @@ export default function HomePage() {
       .then(data => setTopStories(data.results))
   }, [category])
 
-console.log(topStories)
-
   return (
     <section className='home-page'>
       <Filter setCategory={setCategory}/>
-      <h2>Top Stories</h2>
+      <h2 className='home-page-title'>Top Stories</h2>
       <div className='cards-container'>
         {topStories && topStories.map((article, index) => {
           if (article.multimedia) {
@@ -29,6 +27,7 @@ console.log(topStories)
                 section={article.section}
                 title={article.title}
                 image={article.multimedia[2].url}
+                byline={article.byline}
                 topStories={topStories}
               />
             )
